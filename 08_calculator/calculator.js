@@ -7,11 +7,17 @@ const subtract = function(a, b) {
 };
 
 const sum = function(array) {
-	array.reduce(a, b => a + b);
+	const sum = array.reduce(function(a, b) {
+    return a += b;
+  }, 0);
+  return sum;
 };
 
 const multiply = function(array) {
-  array.reduce(a, b => a * b);
+  const sum = array.reduce(function(a, b) {
+    return a *= b;
+  }, 1);
+  return sum;
 };
 
 const power = function(base, exponent) {
@@ -19,9 +25,14 @@ const power = function(base, exponent) {
 };
 
 const factorial = function(num) {
-  let storage = num;
-	for (i = (num - 1); i > 0; i--) {
-    storage *= i;
+  let storage = 1;
+  if (num === 0) {
+    return 1;
+  }
+  else {
+    for (i = 1; i <= num; i++) {
+      storage *= i;
+    };
   };
   return storage;
 };
